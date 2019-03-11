@@ -227,6 +227,7 @@ public class UserController {
         }
         //生成token字符串 admin表示管理员 user表示普通用户
         String token = jwtUtil.createToken(logUser.getId(), logUser.getMobile(), "user");
+        token = "Bearer " + token;
         //响应
         Map<String, Object> map = new HashMap<>();
         map.put("token", token);
