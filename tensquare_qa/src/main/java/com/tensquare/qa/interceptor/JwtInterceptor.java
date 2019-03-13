@@ -34,7 +34,6 @@ public class JwtInterceptor extends HandlerInterceptorAdapter {
 
         // 获取请求头
         String authHeader = request.getHeader("Authorization");
-        System.out.println("authHeader---------" +authHeader);
         // 判断是否为空
         if (authHeader != null) {
             String token = authHeader.substring(7);

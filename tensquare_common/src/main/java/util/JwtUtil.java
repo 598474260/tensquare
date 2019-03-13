@@ -40,33 +40,30 @@ public class JwtUtil {
         JwtBuilder builder = Jwts.builder();
         Map<String,Object> map = new HashMap<>();
         map.put("typ","JWT");
-        // 设置头
+        // 设置头部信息
         builder.setHeader(map);
 
-        // 设置jti: jwt的唯一身份标识，主要用来作为一次性token,从而回避重放攻击。
+        // 设置载荷
         builder.setId(id);
-        // 设置用户sub: jwt所面向的用户
+        // 用户名
         builder.setSubject(subject);
-        // 设置签发时间 iat: jwt的签发时间
+        // 设置角色
+        builder.claim("roles",roles);
+        // 设置生成token的时间
         builder.setIssuedAt(new Date());
-
-        // 设置加密算法和秘钥(itcast) 需要严格保密
+        // 获取当前时间
+        long millis = System.currentTimeMillis();
+        // 设置时间，设置一天时间
+        // millis += 1000*60*60*24;
+        // 设置过期时间
+        millis += num;
+        // 设置过期时间
+        builder.setExpiration(new Date(millis));
+        // 设置签名
         builder.signWith(SignatureAlgorithm.HS256,key);
 
-        // 获取到当前的时间
-        long now = System.currentTimeMillis();
-        // 添加数字，单位是毫秒，1000表示一秒
-        // 设置一分钟
-        now += num;
-
-        // 设置过期时间
-        builder.setExpiration(new Date(now));
-
-        // 生成token
-        String token = builder.compact();
-        // 打印生成的token
-        System.out.println(token);
-        return token;
+        // 生成token，返回
+        return builder.compact();
     }
 
     /**
