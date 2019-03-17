@@ -31,8 +31,7 @@ public class ArticleController {
 	private ArticleService articleService;
 	@Autowired
 	private HttpServletRequest request;
-	
-	
+
 	/**
 	 * 查询全部数据
 	 * @return
