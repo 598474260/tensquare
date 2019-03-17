@@ -1,0 +1,21 @@
+server: 
+  port: 12000
+spring: 
+  application:  
+    name: tensquare-config #指定服务名
+  rabbitmq:
+    host: 192.168.155.128
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/hhw_970109/tensquare_hhw.git
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:6868/eureka
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh

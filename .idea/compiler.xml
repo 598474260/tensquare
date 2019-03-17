@@ -9,6 +9,7 @@
         <module name="tensquare_article" />
         <module name="tensquare_base" />
         <module name="tensquare_common" />
+        <module name="tensquare_config" />
         <module name="tensquare_eureka" />
         <module name="tensquare_friend" />
         <module name="tensquare_gathering" />
@@ -26,6 +27,7 @@
       <module name="tensquare_article" target="1.8" />
       <module name="tensquare_base" target="1.8" />
       <module name="tensquare_common" target="1.8" />
+      <module name="tensquare_config" target="1.8" />
       <module name="tensquare_eureka" target="1.8" />
       <module name="tensquare_friend" target="1.8" />
       <module name="tensquare_gathering" target="1.8" />
@@ -45,6 +47,7 @@
       <module name="tensquare_article" options="-parameters" />
       <module name="tensquare_base" options="-parameters" />
       <module name="tensquare_common" options="-parameters" />
+      <module name="tensquare_config" options="-parameters" />
       <module name="tensquare_eureka" options="-parameters" />
       <module name="tensquare_friend" options="-parameters" />
       <module name="tensquare_gathering" options="-parameters" />
